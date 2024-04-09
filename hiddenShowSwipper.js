@@ -20,6 +20,28 @@
 // });
 // switchSlider();
 
+const brendList = document.querySelector('.brend__list');
+const brends = document.querySelector('.block-brend');
+const swipeWrapper = brends.querySelector('.swiper-wrapper');
+const brendsBtn = document.querySelector('.expander');
+const brendsShow = brendsBtn.querySelector('.expander__text');
+const brendsArrow = brendsBtn.querySelector('.expander__img');
+const slidsHidden = document.querySelectorAll('.swiper_slide__hidden');
+
+var show = brendsBtn.addEventListener('click', function () {
+  slidsHidden.forEach(element =>
+    element.classList.toggle('swiper_slide__hidden')
+  );
+
+  if (brendsShow.textContent === `Скрыть`) {
+    brendsShow.textContent = `Показать все`;
+    brendsArrow.src = 'assets/expand.svg';
+  } else {
+    brendsShow.textContent = `Скрыть`;
+    brendsArrow.src = 'assets/collapse.svg';
+  }
+});
+
 const brendSlider = document.querySelector(".swiper");
 let mobileSlider;
 
@@ -31,11 +53,8 @@ if (brendSlider) {
           el: ".swiper-pagination",
           type: "bullets",
           clickable: true,
-          dynamicBullets: true,
         },
         loop: true,
-        direction: "horizontal",
-        slideClass: 'swiper-slide',
         slidesPerView: 1.3
       });
       brendSlider.dataset.mobile = "true";
@@ -58,36 +77,13 @@ if (brendSlider) {
   switchSlider();
   window.addEventListener("resize", () => {
     switchSlider();
+    show();
   });
 } else {
   console.error("Нет элемента с классом 'swiper' в DOM.");
 }
 
-const brendList = document.querySelector('.brend__list');
-const brends = document.querySelector('.block-brend');
-const swipeWrapper = brends.querySelector('.swiper-wrapper');
-const brendsBtn = document.querySelector('.expander');
-const brendsShow = brendsBtn.querySelector('.expander__text');
-const brendsArrow = brendsBtn.querySelector('.expander__img');
-const slidsHidden = document.querySelectorAll('.swiper_slide__hidden');
 
-brendList.style.maxHeight = '150px';
-
-brendsBtn.addEventListener('click', function () {
-  slidsHidden.forEach(element =>
-    element.classList.toggle('swiper_slide__hidden')
-  );
-
-  if (brendsShow.textContent === `Скрыть`) {
-    brendsShow.textContent = `Показать все`;
-    brendList.style.maxHeight = '150px';
-    brendsArrow.src = 'assets/expand.svg';
-  } else {
-    brendsShow.textContent = `Скрыть`;
-    brendList.style.maxHeight = '240px';
-    brendsArrow.src = 'assets/collapse.svg';
-  }
-});
 
 // const brends = document.querySelector('.block-brend');
 // const swipeWrapper = brends.querySelector('.swiper-wrapper');
