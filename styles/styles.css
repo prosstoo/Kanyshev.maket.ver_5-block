@@ -1,0 +1,212 @@
+@font-face {
+    font-family: 'TT Lakes';
+    src: local('TT Lakes Regular'), local('TTLakes-Regular'),
+        url('/fonts/TTLakes-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: none;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: TT Lakes;
+}
+body {
+    background-color:#EAEAEA; 
+}
+/* заголовок */
+.header__brends {
+    margin: 0;
+    padding: 16px 24px;;
+    font-size: 16px;
+    letter-spacing: -0.2px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #7E7E82;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #f8f8f8 0%, #fff 98.61%);
+    border-top: 1px solid #d9fff5;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+/* список брендов */
+
+.brend__list {
+    display: grid;
+    grid-auto-flow: row;
+    grid-auto-columns: 240px; 
+    grid-auto-rows: 1fr; 
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: 1fr 1fr 1fr; 
+    padding: 16px;
+    list-style: none;
+    gap: 16px 32px;
+    background-color:#EAEAEA;
+    margin: 0 auto;
+}
+.brend__item {
+    display:  flex;
+    justify-content: space-between; ;
+    width: 240px;
+    height: 72px; 
+    background-color:  #FFFFFF;
+    border-radius: 2px;
+    border:  1px solid transparent;
+}
+.brend__item:hover  {
+    border: 1px solid #41F6D7;
+}
+.brend__btn-block {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    border: none;
+    outline: none;
+    padding: 16px;
+}
+.brend__btn_arrow {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    background-image: url("../assets/circle-arrow.svg");
+    background-position:center;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    margin-right: 16px;
+}
+.brend__btn_arrow:hover {
+    background-size: 40px;
+    border-radius: 50%;
+    background-color: #FF3E79;
+} 
+.brend__img_lenovo {
+    width: 108px;
+    height: 32px;
+}
+.brend__img_samsung {
+    width: 116px;
+    height: 38px;
+}
+.brend__img_apple {
+    width: 44px;
+    height: 44px;
+}
+.brend__img_view {
+    width: 128px;
+    height: 21px;
+}
+.brend__img_bosh {
+    width: 128px;
+    height: 28px;
+}
+.brend__img_hp {
+    width: 52px;
+    height: 52px;
+}
+.brend__img_acer {
+    width: 94px;
+    height: 24px;
+}
+.brend__img_sony {
+    width: 128px;
+    height: 25px;
+}
+
+.swiper-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 16px;
+    margin-left: 4px; 
+    height: auto;
+}
+.swiper-slide {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    width: 240px !important;
+    height: 72px;
+    background: #FFFFFF;
+    border: 1px solid #EAEAEA;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+.swiper-pagination {
+    position: relative;
+}
+.swiper-pagination-bullet {
+    background: #979797;
+    width: 12px;
+    height: 12px;
+}
+.swiper-pagination-bullet-active {
+    background: #B5B6BC;
+}
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: 2px;
+}
+.expander {
+    display: none;
+}
+@media (max-width: 767px) { 
+    .block-brend {
+        width: 97%;
+    }
+}
+@media (min-width: 768px) {
+    .brend__list {
+        display: grid;
+        grid-auto-flow: row;
+        grid-auto-columns: 240px; 
+        grid-auto-rows: 1fr; 
+        grid-template-columns: repeat(3, auto);
+        grid-template-rows: 1fr 1fr 1fr; 
+        padding: 16px;
+        list-style: none;
+        gap: 16px 32px;
+        background-color:#EAEAEA; 
+    }
+    .header__brends {
+        filter: none;
+    }
+    .swiper_slide__hidden {
+        display: none;   
+    }
+    .swiper-pagination {
+        display: none;
+    }
+    .expander {
+        margin: 4px 0 24px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        padding: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: -0.2px;
+        font-size: 16px; 
+    }
+}
+ @media (min-width: 1120px) {
+    .brend__list {
+        grid-template-columns: repeat(4, auto);
+    }
+    .header__brends {
+        filter: none;
+    }
+    .swiper-slide--hidden:nth-child(7),
+    .swiper-slide--hidden:nth-child(8) {
+        display: block;
+    }
+    .swiper_slide__hidden {
+        display: none;   
+    }
+    .swiper-pagination {
+        display: none;
+    }
+}
